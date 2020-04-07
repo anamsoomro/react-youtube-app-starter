@@ -22,6 +22,21 @@ class SearchBar extends Component {
     event.target.reset()
   }
 
+  // lodash is a library 
+  // have an onchang wihtout handle submit 
+  // you dont need event.preventDefault 
+  // the event is not the input 
+  // youre going to be fetching information from what youre typing 
+  // so to stop it from doing so many fetches all the time 
+  // use lodash debounce to do it every n ms
+  // inside the app render
+  // _.debounce is a function
+  // import _ from lodash
+  // const videoSearch = _.debounce(term => {
+  //   this.handleSearch(term)
+  // })
+  // and now to your search bar send the videoSearch function with the debouce applied
+
 
 
   render() {

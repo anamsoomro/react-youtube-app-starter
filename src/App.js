@@ -13,11 +13,10 @@ class App extends Component {
     this.state = {
       searchResponse: [],
       videoDisplay: [],
-      relatedDisplay: []
+      relatedDisplay: [] // this logic could be rendered within related videos too 
+      // isLoading: true
     }
   }
-
-
 
   handleSearch = (searchTerm) => {
     let url = `https://www.googleapis.com/youtube/v3/search?part=snippet&key=${key.API_KEY}&q=${searchTerm}&type=video`
@@ -32,6 +31,7 @@ class App extends Component {
         // Play the first, show the rest as related 
         videoDisplay: firstVideo,
         relatedDisplay: remainingVideos
+        // isLoading: false
       })
     })
 
@@ -57,6 +57,11 @@ class App extends Component {
 
   render() {
     return (
+      // {
+      //   this.state.isLoading
+      //   ? <div> Content is Loading </div>
+      //   : render below
+      // }
       <div>
         <SearchBar handleSearch={this.handleSearch}/>
         <VideoPanel video={this.state.videoDisplay} /> 

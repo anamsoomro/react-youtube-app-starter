@@ -15,6 +15,7 @@ class VideoPanel extends Component {
     if (this.props.video.id){
       const embedUrl = `https://www.youtube.com/embed/${this.props.video.id.videoId}`;
       return (
+        // This could also be nicely styled iwth segments instead of cards
         <div style={divStyle} className="ui card">
           <div className="ui content">
             <iframe src={embedUrl} style={{width: "600px", height: "400px"}}/>
